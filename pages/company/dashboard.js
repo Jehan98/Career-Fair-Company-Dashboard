@@ -22,7 +22,7 @@ const dashboard = () => {
 				</Flex>
 				<Flex flexDirection='column' width="60%" mt={5}>
 					<Interviews />
-					<Controls />
+					<Controls/>
 				</Flex>
 			</Flex>
 			
