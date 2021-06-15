@@ -1,136 +1,244 @@
 import {
-	Flex,
-	Heading,
-	useColorModeValue,
-	Avatar,
-	Text,
-	Button,
+  Flex,
+  useColorModeValue,
+  Text,
+  Button,
+  Box,
+  Spacer,
+  Tab,
+  TabPanel,
+  Tabs,
+  TabPanels,
+  TabList,
+  Stack,
 } from "@chakra-ui/react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const Interviews = () => {
-	const cardBackground = useColorModeValue("gray.100", "gray.700");
-	return (
-		<Flex width='100%' justifyContent='center'>
-			<Flex
-				p={3}
-				height='-webkit-fit-content'
-				width='100%'
-				rounded={6}
-				background={cardBackground}
-				flexDirection='column'
-				alignItems='center'
-				shadow='md'
-				ml={3}
-				mr={3}>
-				<AssignedInterviews />
-			</Flex>
-		</Flex>
-	);
+  const cardBackground = useColorModeValue("gray.100", "gray.700");
+
+  //data of candidates
+  const assignedCandidates = [
+    {
+      student_id: 1,
+      student_name: "Geshan Sudasinghe",
+      student_cv: "/cv/st1",
+      student_email: "geshan@gmail.",
+    },
+    {
+      student_id: 2,
+      student_name: "Geshan Sudasinghe ",
+      student_cv: "/cv/st2",
+      student_email: "geshansudasinghe999@gmail.com",
+    },
+    {
+      student_id: 3,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st3",
+      student_email: "janith@gmail.com",
+    },
+  ];
+
+  const walkingCandidates = [
+    {
+      student_id: 1,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st1",
+      student_email: "st1@gmail.com",
+    },
+    {
+      student_id: 2,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st2",
+      student_email: "geshansudasinghe@gmail.com",
+    },
+    {
+      student_id: 3,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st3",
+      student_email: "st1@gmail.com",
+    },
+    {
+      student_id: 4,
+      student_name: "Geshan Sudasinghe ",
+      student_cv: "/cv/st3",
+      student_email: "geshansudasinghe999@gmail.com",
+    },
+    {
+      student_id: 1,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st1",
+      student_email: "st1@gmail.com",
+    },
+    {
+      student_id: 2,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st2",
+      student_email: "geshansudasinghe@gmail.com",
+    },
+    {
+      student_id: 3,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st3",
+      student_email: "st1@gmail.com",
+    },
+    {
+      student_id: 4,
+      student_name: "Geshan Sudasinghe ",
+      student_cv: "/cv/st3",
+      student_email: "geshansudasinghe999@gmail.com",
+    },
+    {
+      student_id: 1,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st1",
+      student_email: "st1@gmail.com",
+    },
+    {
+      student_id: 2,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st2",
+      student_email: "geshansudasinghe@gmail.com",
+    },
+    {
+      student_id: 3,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st3",
+      student_email: "st1@gmail.com",
+    },
+    {
+      student_id: 4,
+      student_name: "Geshan Sudasinghe ",
+      student_cv: "/cv/st3",
+      student_email: "geshansudasinghe999@gmail.com",
+    },
+  ];
+  const inQueue = [
+    {
+      student_id: 1,
+      student_name: "Geshan Sudasinghe",
+      student_cv: "/cv/st1",
+      student_email: "geshan@gmail.",
+    },
+    {
+      student_id: 2,
+      student_name: "Geshan Sudasinghe ",
+      student_cv: "/cv/st2",
+      student_email: "geshansudasinghe999@gmail.com",
+    },
+    {
+      student_id: 3,
+      student_name: "Janith Samee",
+      student_cv: "/cv/st3",
+      student_email: "janith@gmail.com",
+    },
+  ];
+  const panelHistory = [];
+
+  return (
+    <Flex 
+    direction="column" 
+    alignItems="center" 
+    width='100%' 
+    ml={3}
+    p={2} 
+    rounded={7}
+    background={cardBackground}>
+      <Box
+        bg={cardBackground}
+        justify="center"
+        width="100%"
+        rounded={7}
+        mt={3}
+        mb={1}
+        shadow="md"
+      >
+        <Tabs isFitted mt={3} rounded={7}>
+          <TabList>
+            <Tab>Assigned Candidates</Tab>
+            <Tab>Walking Candidates</Tab>
+            <Tab> In Queue</Tab>
+            <Tab>Panel History</Tab>
+          </TabList>
+          <Stack
+            height="50vh"
+            maxW="100%"
+            maxH="50vh"
+            overflow="scroll"
+            bg={cardBackground}
+            rounded={7}
+          >
+            <TabPanels>
+              <TabPanel>
+                {assignedCandidates.map((student) => (
+                  <StudentCard data={student} key={student.id} />
+                ))}
+              </TabPanel>
+              <TabPanel>
+                {walkingCandidates.map((student) => (
+                  <StudentCard data={student} key={student.id} />
+                ))}
+              </TabPanel>
+              <TabPanel>
+                {inQueue.map((student) => (
+                  <StudentCard data={student} key={student.id} />
+                ))}
+              </TabPanel>
+              <TabPanel>
+                {panelHistory.map((student) => (
+                  <StudentCard data={student} key={student.id} />
+                ))}
+              </TabPanel>
+            </TabPanels>
+          </Stack>
+        </Tabs>
+      </Box>
+    </Flex>
+  );
 };
 
-const AssignedInterviews = () => {
-	const data = [
-		{
-			interview_id: 1,
-			company_name: "Google",
-			company_logo: "https://bit.ly/3g0VH4E",
-			panel_no: 2,
-			queue_length: 3,
-			interview_schedule: "1st of June 9.00AM to 12.00PM",
-		},
-		{
-			interview_id: 2,
-			company_name: "Microsoft",
-			company_logo: "https://bit.ly/2S2Ws53",
-			panel_no: 3,
-			queue_length: 5,
-			interview_schedule: "2nd of June 9.00AM to 12.00PM",
-		},
-		{
-			interview_id: 1,
-			company_name: "Google",
-			company_logo: "https://bit.ly/3g0VH4E",
-			panel_no: 2,
-			queue_length: 3,
-			interview_schedule: "1st of June 9.00AM to 12.00PM",
-		},
-		{
-			interview_id: 2,
-			company_name: "Microsoft",
-			company_logo: "https://bit.ly/2S2Ws53",
-			panel_no: 3,
-			queue_length: 5,
-			interview_schedule: "2nd of June 9.00AM to 12.00PM",
-		},
-		{
-			interview_id: 1,
-			company_name: "Google",
-			company_logo: "https://bit.ly/3g0VH4E",
-			panel_no: 2,
-			queue_length: 3,
-			interview_schedule: "1st of June 9.00AM to 12.00PM",
-		},
-		{
-			interview_id: 2,
-			company_name: "Microsoft",
-			company_logo: "https://bit.ly/2S2Ws53",
-			panel_no: 3,
-			queue_length: 5,
-			interview_schedule: "2nd of June 9.00AM to 12.00PM",
-		}
-	];
-	return (
-		<Flex
-			flexDirection='column'
-			mt={5}
-			width='100%'
-			p={2}
-			overflow='scroll'
-			maxHeight={500}>
-			<Heading size='md' mb={5}>
-				Your Assigned Interviews
-			</Heading>
-			{data.map((interview) => {
-				return <InterviewCard data={interview} key={interview.interview_id} />;
-			})}
-		</Flex>
-	);
-};
+function StudentCard({ data }) {
+  const cardBackground = useColorModeValue("gray.100", "gray.700");
 
-const InterviewCard = ({ data }) => {
-	return (
-		<Flex
-			shadow='md'
-			rounded={5}
-			p={3}
-			flexDirection='column'
-			mb={5}
-			width='100%'>
-			<Flex justifyContent='space-between'>
-				<Flex alignItems='center'>
-					<Avatar
-						size='md'
-						src={data.company_logo}
-						mr={3}
-						backgroundColor='white'
-					/>
-					<Flex flexDirection='column'>
-						<Text fontSize='larger'>{data.company_name}</Text>
-						<Text fontSize='smaller'>Panel {data.panel_no}</Text>
-					</Flex>
-				</Flex>
-				<Flex alignItems='center'>
-					<Text fontSize='large'>{data.queue_length} people in the queue</Text>
-				</Flex>
-				<Flex alignItems='center'>
-					<Button colorScheme='blue'>Check-In</Button>
-				</Flex>
-			</Flex>
-			<Flex justifyContent='flex-end'>
-				<Text fontSize='xs'>{data.interview_schedule}</Text>
-			</Flex>
-		</Flex>
-	);
-};
+  return (
+    <Flex width="100%" justify="center">
+      <Box
+        background={cardBackground}
+        p={3}
+        rounded={6}
+        alignItems="center"
+        shadow="md"
+        width="100%"
+        mt={3}
+      >
+        <Flex direction="row" width="100%">
+          <Box alignItems="center" width="25%">
+            {" "}
+            <Text fontSize="md">{data.student_name}</Text>
+          </Box>
+
+          <Spacer />
+
+          <Flex alignItems="center">
+            {" "}
+            <Text fontSize="md">{data.student_email}</Text>
+          </Flex>
+
+          <Spacer />
+
+          <Router>
+            <Flex alignItems="center">
+              <Link to={data.student_cv}>
+                <Button colorScheme="teal" size="sm" ml={20}>
+                  CV
+                </Button>
+              </Link>
+            </Flex>
+          </Router>
+        </Flex>
+      </Box>
+    </Flex>
+  );
+}
 
 export default Interviews;

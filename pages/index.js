@@ -11,9 +11,15 @@ import {
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export default function Home() {
-  return (
-    <Button height={100} width={100}>
-						<Link href='/company/dashboard'>Recruiter</Link>
+	const router = useRouter();
+	return (
+		<Button
+			height={100}
+			width={100}
+			mr={5}
+			onClick={() => router.push("/company/dashboard")}
+			>
+			Company
 		</Button>
-  )
+	)
 }

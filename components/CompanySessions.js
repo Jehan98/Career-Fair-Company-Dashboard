@@ -29,38 +29,38 @@ const Sessions = () => {
 };
 
 const AssignedSessions = () => {
-	const data = [
+	const sessions_data = [
 		{
-			interview_id: 1,
+			session_id: 1,
 			company_name: "Google",
 			company_logo: "https://bit.ly/3g0VH4E",
 			panel_no: 2,
 			queue_length: 3,
-			interview_schedule: "1st of June 9.00AM to 12.00PM",
+			session_schedule: "1st of June 9.00AM to 12.00PM",
 		},
 		{
-			interview_id: 2,
+			session_id: 2,
 			company_name: "Microsoft",
 			company_logo: "https://bit.ly/2S2Ws53",
 			panel_no: 3,
 			queue_length: 5,
-			interview_schedule: "2nd of June 9.00AM to 12.00PM",
+			session_schedule: "2nd of June 9.00AM to 12.00PM",
 		},
 		{
-			interview_id: 1,
+			session_id: 3,
 			company_name: "Google",
 			company_logo: "https://bit.ly/3g0VH4E",
 			panel_no: 2,
 			queue_length: 3,
-			interview_schedule: "1st of June 9.00AM to 12.00PM",
+			session_schedule: "1st of June 9.00AM to 12.00PM",
 		},
 		{
-			interview_id: 2,
+			session_id: 4,
 			company_name: "Microsoft",
 			company_logo: "https://bit.ly/2S2Ws53",
 			panel_no: 3,
 			queue_length: 5,
-			interview_schedule: "2nd of June 9.00AM to 12.00PM",
+			session_schedule: "2nd of June 9.00AM to 12.00PM",
 		}
 	];
 	return (
@@ -74,8 +74,8 @@ const AssignedSessions = () => {
 			<Heading size='md' mb={5}>
 				Sessions
 			</Heading>
-			{data.map((interview) => {
-				return <InterviewCard data={interview} key={interview.interview_id} />;
+			{sessions_data.map((session) => {
+				return <InterviewCard data={session} key={session.session_id} />;
 			})}
 		</Flex>
 	);
@@ -92,23 +92,21 @@ const InterviewCard = ({ data }) => {
 			width='100%'>
 			<Flex justifyContent='space-between'>
 				<Flex alignItems='center'>
-					<Avatar
-						size='md'
-						src={data.company_logo}
-						mr={3}
-						backgroundColor='white'
-					/>
 					<Flex flexDirection='column'>
-						<Text fontSize='larger'>{data.company_name}</Text>
-						<Text fontSize='smaller'>Panel {data.panel_no}</Text>
+						<Text fontSize='larger'>Session {data.session_id}</Text>
+						<Text fontSize='xs'>{data.session_schedule}</Text>
 					</Flex>
 				</Flex>
-				<Flex alignItems='center'>
-					<Button colorScheme='blue'>Check-In</Button>
+				<Flex alignItems='center' flexDirection='column'>
+					<Button colorScheme='blue'>Panel 1</Button>
+					<br/>
+					<Button colorScheme='blue'>Panel 2</Button>
+					<br/>
+					<Button colorScheme='blue'>Panel 3</Button>
 				</Flex>
 			</Flex>
 			<Flex justifyContent='flex-end'>
-				<Text fontSize='xs'>{data.interview_schedule}</Text>
+				
 			</Flex>
 		</Flex>
 	);

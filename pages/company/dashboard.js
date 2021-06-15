@@ -3,9 +3,9 @@ import { Flex } from "@chakra-ui/react";
 import CompanyHeader from "../../components/CompanyHeader";
 import CompanyFooter from "../../components/CompanyFooter";
 import CompanyDetails from "../../components/CompanyLogo";
-import CompanySessions from "../../components/CompanySessions";
 import Interviews from "../../components/Interviews";
 import Controls from "../../components/Controls";
+import CompanySessions from "../../components/CompanySessions";
 
 const dashboard = () => {
 	return (
