@@ -28,11 +28,6 @@ const CompanyHeader = () => {
 						icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
 					/>
 				</Box>
-				<Box ml={2}>
-					<Flex alignItems='center'>
-						<Button colorScheme='red'>Log Out</Button>
-					</Flex>
-				</Box>
 			</Flex>
 		</Flex>
 	);

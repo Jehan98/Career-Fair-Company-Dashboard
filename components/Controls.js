@@ -30,7 +30,7 @@ const Controls = () => {
 		width='100%' 
 		justifyContent='center' 
 		flexDirection="row" 
-		mr={3}
+		ml={3}
 		mt={3}
 		>
 			<OtherControls cardBackground={cardBackground} />

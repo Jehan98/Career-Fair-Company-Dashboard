@@ -15,10 +15,10 @@ const OtherControls = ({cardBackground}) => {
         p={3}
         mr={3}
         flexDirection='column'
-        width='40%'
+        width='45%'
         overflow='auto'>
         <Flex justifyContent='space-between' mr='3' p={1}>
-            <Flex alignItems='center'>
+            <Flex p={2}>
                 <Flex flexDirection='column'>
                     <Heading size='md' mb={5}>
                         Controls
