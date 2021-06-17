@@ -3,7 +3,6 @@ import {
 	useColorMode,
 	Box,
 	IconButton,
-	Button,
 	Heading,
 } from "@chakra-ui/react";
 import { LockIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";

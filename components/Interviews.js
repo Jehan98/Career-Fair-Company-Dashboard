@@ -141,6 +141,7 @@ const Interviews = () => {
     alignItems="center" 
     width='100%' 
     ml={3}
+    mr={3}
     p={2} 
     rounded={7}
     background={cardBackground}>
@@ -154,7 +155,7 @@ const Interviews = () => {
         shadow="md"
       >
         <Tabs isFitted mt={3} rounded={7}>
-          <TabList>
+          <TabList >
             <Tab>Assigned Candidates</Tab>
             <Tab>Walking Candidates</Tab>
             <Tab> In Queue</Tab>

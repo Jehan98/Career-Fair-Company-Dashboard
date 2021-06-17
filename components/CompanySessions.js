@@ -69,7 +69,7 @@ const AssignedSessions = () => {
 			mt={5}
 			width='100%'
 			p={2}
-			overflow='scroll'
+			overflow='auto'
 			maxHeight={500}>
 			<Heading size='md' mb={5}>
 				Sessions

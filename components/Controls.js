@@ -1,8 +1,6 @@
 import {
 	Flex,
-	Heading,
-	useColorModeValue,
-	Button,
+	useColorModeValue
 } from "@chakra-ui/react";
 
 import ControlCurrentCandidate from "./ControlCurrentCandidate";
@@ -17,24 +15,36 @@ const Controls = () => {
 		email: "wso2@gmail.com",
 	};
 
-	const data = {
-		name: "John Doe",
-		department: "Electrical Engineering",
-		avatar_img: "https://bit.ly/sage-adebayo",
-		email: "john@gmail.com",
-		cv: "CV"
-	};
+	const data = [
+		{	name: "John Doe",
+			department: "Electrical Engineering",
+			avatar_img: "https://bit.ly/prosper-baba",
+			email: "john@gmail.com",
+			cv: "CV"
+		},
+		{
+			name: "Ryan Florence",
+			department: "Electrical Engineering",
+			avatar_img: "https://bit.ly/code-beast",
+			email: "ryan@gmail.com",
+			cv: "CV"
+		}
+	];
 
 	return (
 		<Flex 
-		width='100%' 
+		width='93%' 
 		justifyContent='center' 
-		flexDirection="row" 
-		ml={3}
-		mt={3}
+		flexDirection="column" 
+		background={cardBackground}
+		ml={9}
+		overflow='auto'
+		rounded={7}
+		mr={6}
+		p={3}
 		>
-			<OtherControls cardBackground={cardBackground} />
-			<ControlCurrentCandidate data={data} cardBackground={cardBackground} />
+			<ControlCurrentCandidate data={data[0]} cardBackground={cardBackground} />
+			<OtherControls data={data[1]} cardBackground={cardBackground} />
 		</Flex>
 	);
 };
