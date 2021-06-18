@@ -33,11 +33,10 @@ const Controls = () => {
 
 	return (
 		<Flex 
-		width='93%' 
+		width='100%' 
 		justifyContent='center' 
 		flexDirection="column" 
 		background={cardBackground}
-		ml={9}
 		overflow='auto'
 		rounded={7}
 		p={3}

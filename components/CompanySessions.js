@@ -2,9 +2,7 @@ import {
 	Flex,
 	Heading,
 	useColorModeValue,
-	Avatar,
 	Text,
-	Button,
 } from "@chakra-ui/react";
 
 const Sessions = () => {
@@ -59,6 +57,14 @@ const AssignedSessions = () => {
 			panel_no: 3,
 			queue_length: 5,
 			session_schedule: "2nd of June 9.00AM to 12.00PM",
+		},
+		{
+			session_id: 5,
+			company_name: "Microsoft",
+			company_logo: "https://bit.ly/2S2Ws53",
+			panel_no: 3,
+			queue_length: 5,
+			session_schedule: "2nd of June 9.00AM to 12.00PM",
 		}
 	];
 	return (
@@ -94,13 +100,6 @@ const InterviewCard = ({ data }) => {
 						<Text fontSize='larger'>Session {data.session_id}</Text>
 						<Text fontSize='xs'>{data.session_schedule}</Text>
 					</Flex>
-				</Flex>
-				<Flex alignItems='center' flexDirection='column'>
-					<Button colorScheme='blue'>Panel 1</Button>
-					<br/>
-					<Button colorScheme='blue'>Panel 2</Button>
-					<br/>
-					<Button colorScheme='blue'>Panel 3</Button>
 				</Flex>
 			</Flex>
 			<Flex justifyContent='flex-end'>

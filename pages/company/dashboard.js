@@ -21,7 +21,7 @@ const dashboard = () => {
 					<CompanyDetails />
 					<CompanySessions />
 				</Flex>
-				<Flex flexDirection='column' width="45%" mr={3}>
+				<Flex flexDirection='column' width="45%" mr={3} >
 					<Interviews />
 				</Flex>
 				<Flex flexDirection='column' width="30%" mr={3}>

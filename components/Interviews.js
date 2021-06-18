@@ -129,14 +129,11 @@ const Interviews = () => {
   const panelHistory = [];
 
   return (
-    <Flex direction="column" alignItems="center">
+    <Flex direction="column" >
       <Box
         bg={cardBackground}
         justify="center"
-        width="102%"
         rounded={7}
-        mt={0}
-        ml={7}
         shadow="md"
         overflow='auto'
       >
@@ -147,7 +144,7 @@ const Interviews = () => {
             <Tab> In Queue</Tab>
             <Tab>Panel History</Tab>
           </TabList>
-          <Stack overflow="scroll" bg={cardBackground} minHeight='70vh' maxHeight='80vh'>
+          <Stack overflow="scroll" bg={cardBackground} minHeight='60vh' maxHeight='80vh'>
             <TabPanels>
               <TabPanel>
                 <Table variant="striped" size="sm">

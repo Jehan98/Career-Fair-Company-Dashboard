@@ -12,14 +12,13 @@ const CandidateDetails = ({data, cardBackground}) => {
     return (
         <Flex justifyContent='space-between' mt={3} p={2}>
 				<Flex
-				shadow='lg'
 				rounded={5}
 				p={6}
 				flexDirection='row'
 				width='100%'
 				alignItems='center'
-				ml={5}
-				mr={5}
+				ml={3}
+				mr={3}
 				justifyContent='center'>
 					<Avatar
 						size='md'
@@ -37,7 +36,7 @@ const CandidateDetails = ({data, cardBackground}) => {
 						</Flex>
 					</Flex>
 					<Box>
-						<Flex background={cardBackground} alignItems='center' ml={3}>
+						<Flex background={cardBackground} alignItems='center' ml={5}>
 						<IconButton 
 							onClick={() => console.log("CV Button Clicked")}
 							icon={<ExternalLinkIcon />}
