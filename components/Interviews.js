@@ -133,21 +133,21 @@ const Interviews = () => {
       <Box
         bg={cardBackground}
         justify="center"
-        width="100%"
+        width="102%"
         rounded={7}
         mt={0}
         ml={7}
         shadow="md"
         overflow='auto'
       >
-        <Tabs isFitted>
+        <Tabs isFitted mt={3}>
           <TabList>
             <Tab>Assigned Candidates</Tab>
             <Tab>Walking Candidates</Tab>
             <Tab> In Queue</Tab>
             <Tab>Panel History</Tab>
           </TabList>
-          <Stack overflow="scroll" bg={cardBackground} minHeight='70vh' maxHeight='70vh'>
+          <Stack overflow="scroll" bg={cardBackground} minHeight='70vh' maxHeight='80vh'>
             <TabPanels>
               <TabPanel>
                 <Table variant="striped" size="sm">
