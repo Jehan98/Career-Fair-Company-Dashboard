@@ -26,11 +26,11 @@ const CurrentCandidate = ({data, cardBackground}) => {
 			
 			<CandidateDetails data={data} cardBackground={cardBackground} />
 			
-			<Flex alignItems='center' width='100%' mt={3} mb={3} flexDirection='row' justifyContent='center'>
+			<Flex alignItems='center' width='100%' mt={6} mb={3} flexDirection='row' justifyContent='center'>
 				<Button colorScheme='green' width='60%' size='lg' height='16' shadow='md' mr={3}>
 					Join Meeting
 				</Button>
-				<Button colorScheme='orange' size='lg' height='16' shadow='md' ml={3}>
+				<Button colorScheme='orange' size='lg' width='40%' height='16' shadow='md' ml={3}>
 					Feedback
 				</Button>
 			</Flex>	
