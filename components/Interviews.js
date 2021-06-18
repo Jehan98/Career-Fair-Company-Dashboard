@@ -21,7 +21,6 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 const Interviews = () => {
   const cardBackground = useColorModeValue("gray.100", "gray.700");
 
-  //data of candidates
   const assignedCandidates = [
     {
       student_id: "190609J",
