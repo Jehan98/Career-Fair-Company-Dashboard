@@ -1,194 +1,226 @@
 import {
   Flex,
   useColorModeValue,
-  Text,
   Button,
   Box,
-  Spacer,
   Tab,
   TabPanel,
   Tabs,
   TabPanels,
   TabList,
   Stack,
+  Table,
+  Thead,
+  Td,
+  Th,
+  Tr,
+  Tbody,
 } from "@chakra-ui/react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const Interviews = () => {
   const cardBackground = useColorModeValue("gray.100", "gray.700");
 
-  //data of candidates
   const assignedCandidates = [
     {
-      student_id: 1,
+      student_id: "190609J",
       student_name: "Geshan Sudasinghe",
       student_cv: "/cv/st1",
       student_email: "geshan@gmail.",
+      department: "Electrical",
     },
     {
-      student_id: 2,
+      student_id: "190619J",
       student_name: "Geshan Sudasinghe ",
       student_cv: "/cv/st2",
       student_email: "geshansudasinghe999@gmail.com",
+      department: "Electrical",
     },
     {
-      student_id: 3,
+      student_id: "190629J",
       student_name: "Janith Samee",
       student_cv: "/cv/st3",
       student_email: "janith@gmail.com",
+      department: "Electrical",
     },
   ];
 
   const walkingCandidates = [
     {
-      student_id: 1,
-      student_name: "Janith Samee",
-      student_cv: "/cv/st1",
-      student_email: "st1@gmail.com",
-    },
-    {
-      student_id: 2,
-      student_name: "Janith Samee",
-      student_cv: "/cv/st2",
-      student_email: "geshansudasinghe@gmail.com",
-    },
-    {
-      student_id: 3,
-      student_name: "Janith Samee",
-      student_cv: "/cv/st3",
-      student_email: "st1@gmail.com",
-    },
-    {
-      student_id: 4,
+      student_id: "190619J",
       student_name: "Geshan Sudasinghe ",
-      student_cv: "/cv/st3",
-      student_email: "geshansudasinghe999@gmail.com",
-    },
-    {
-      student_id: 1,
-      student_name: "Janith Samee",
-      student_cv: "/cv/st1",
-      student_email: "st1@gmail.com",
-    },
-    {
-      student_id: 2,
-      student_name: "Janith Samee",
       student_cv: "/cv/st2",
-      student_email: "geshansudasinghe@gmail.com",
-    },
-    {
-      student_id: 3,
-      student_name: "Janith Samee",
-      student_cv: "/cv/st3",
-      student_email: "st1@gmail.com",
-    },
-    {
-      student_id: 4,
-      student_name: "Geshan Sudasinghe ",
-      student_cv: "/cv/st3",
       student_email: "geshansudasinghe999@gmail.com",
+      department: "Electrical",
     },
     {
-      student_id: 1,
+      student_id: "190629J",
       student_name: "Janith Samee",
+      student_cv: "/cv/st3",
+      student_email: "janith@gmail.com",
+      department: "Electrical",
+    },
+    {
+      student_id: "190639J",
+      student_name: "Geshan Sudasinghe",
       student_cv: "/cv/st1",
-      student_email: "st1@gmail.com",
+      student_email: "geshan@gmail.",
+      department: "Electrical",
     },
     {
-      student_id: 2,
-      student_name: "Janith Samee",
-      student_cv: "/cv/st2",
-      student_email: "geshansudasinghe@gmail.com",
-    },
-    {
-      student_id: 3,
-      student_name: "Janith Samee",
-      student_cv: "/cv/st3",
-      student_email: "st1@gmail.com",
-    },
-    {
-      student_id: 4,
+      student_id: "190649J",
       student_name: "Geshan Sudasinghe ",
-      student_cv: "/cv/st3",
+      student_cv: "/cv/st2",
       student_email: "geshansudasinghe999@gmail.com",
+      department: "Electrical",
+    },
+    {
+      student_id: "190659J",
+      student_name: "Janith Samee",
+      student_cv: "/cv/st3",
+      student_email: "janith@gmail.com",
+      department: "Electrical",
+    },
+    {
+      student_id: "190669J",
+      student_name: "Geshan Sudasinghe ",
+      student_cv: "/cv/st2",
+      student_email: "geshansudasinghe999@gmail.com",
+      department: "Electrical",
+    },
+    {
+      student_id: "190679J",
+      student_name: "Janith Samee",
+      student_cv: "/cv/st3",
+      student_email: "janith@gmail.com",
+      department: "Electrical",
     },
   ];
   const inQueue = [
     {
-      student_id: 1,
-      student_name: "Geshan Sudasinghe",
-      student_cv: "/cv/st1",
-      student_email: "geshan@gmail.",
-    },
-    {
-      student_id: 2,
+      student_id: "190689J",
       student_name: "Geshan Sudasinghe ",
       student_cv: "/cv/st2",
       student_email: "geshansudasinghe999@gmail.com",
+      department: "Electrical",
     },
     {
-      student_id: 3,
+      student_id: "110629J",
       student_name: "Janith Samee",
       student_cv: "/cv/st3",
       student_email: "janith@gmail.com",
+      department: "Electrical",
+    },
+    {
+      student_id: "120619J",
+      student_name: "Geshan Sudasinghe ",
+      student_cv: "/cv/st2",
+      student_email: "geshansudasinghe999@gmail.com",
+      department: "Electrical",
+    },
+    {
+      student_id: "170629J",
+      student_name: "Janith Samee",
+      student_cv: "/cv/st3",
+      student_email: "janith@gmail.com",
+      department: "Electrical",
     },
   ];
   const panelHistory = [];
 
   return (
-    <Flex 
-    direction="column" 
-    alignItems="center" 
-    width='100%' 
-    ml={3}
-    mr={3}
-    p={2} 
-    rounded={7}
-    background={cardBackground}>
+    <Flex direction="column" alignItems="center">
       <Box
         bg={cardBackground}
         justify="center"
-        width="100%"
+        width="102%"
         rounded={7}
-        mt={3}
-        mb={1}
+        mt={0}
+        ml={7}
         shadow="md"
       >
-        <Tabs isFitted mt={3} rounded={7}>
-          <TabList >
+        <Tabs isFitted>
+          <TabList>
             <Tab>Assigned Candidates</Tab>
             <Tab>Walking Candidates</Tab>
             <Tab> In Queue</Tab>
             <Tab>Panel History</Tab>
           </TabList>
-          <Stack
-            height="50vh"
-            maxW="100%"
-            maxH="50vh"
-            overflow="scroll"
-            bg={cardBackground}
-            rounded={7}
-          >
+          <Stack height="103vh" overflow="scroll" bg={cardBackground}>
             <TabPanels>
               <TabPanel>
-                {assignedCandidates.map((student) => (
-                  <StudentCard data={student} key={student.id} />
-                ))}
+                <Table variant="striped" size="sm">
+                  <Thead>
+                    <Tr>
+                      <Th>Student Name</Th>
+                      <Th>University ID</Th>
+                      <Th>Deoartment</Th>
+                      <Th>Email</Th>
+                      <Th></Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    {assignedCandidates.map((student) => (
+                      <StudentRow data={student} key={student.student_id} />
+                    ))}
+                  </Tbody>
+                </Table>
               </TabPanel>
               <TabPanel>
-                {walkingCandidates.map((student) => (
-                  <StudentCard data={student} key={student.id} />
-                ))}
+                <Table variant="striped" size="sm">
+                  <Thead>
+                    <Tr>
+                      <Th>Student Name</Th>
+                      <Th>University ID</Th>
+                      <Th>Department</Th>
+                      <Th>Email</Th>
+                      <Th></Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    {walkingCandidates.map((student) => (
+                      <StudentRow data={student} key={student.student_id} />
+                    ))}
+                  </Tbody>
+                </Table>
               </TabPanel>
               <TabPanel>
-                {inQueue.map((student) => (
-                  <StudentCard data={student} key={student.id} />
-                ))}
+                <Table variant="striped" size="sm">
+                  <Thead>
+                    <Tr>
+                      <Th>Student Name</Th>
+                      <Th>University ID</Th>
+                      <Th>Department</Th>
+                      <Th>Email</Th>
+                      <Th></Th>
+                      <Th></Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    {inQueue.map((student) => (
+                      <StudentRowInQ data={student} key={student.student_id} />
+                    ))}
+                  </Tbody>
+                </Table>
               </TabPanel>
               <TabPanel>
-                {panelHistory.map((student) => (
-                  <StudentCard data={student} key={student.id} />
-                ))}
+                <Table variant="striped" size="sm">
+                  <Thead>
+                    <Tr>
+                      <Th>Student Name</Th>
+                      <Th>University ID</Th>
+                      <Th>Department</Th>
+                      <Th>Email</Th>
+                      <Th></Th>
+                      <Th></Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    {panelHistory.map((student) => (
+                      <StudentRow data={student} key={student.student_id} />
+                    ))}
+                  </Tbody>
+                </Table>
               </TabPanel>
             </TabPanels>
           </Stack>
@@ -198,47 +230,47 @@ const Interviews = () => {
   );
 };
 
-function StudentCard({ data }) {
-  const cardBackground = useColorModeValue("gray.100", "gray.700");
-
+function StudentRow({ data }) {
   return (
-    <Flex width="100%" justify="center">
-      <Box
-        background={cardBackground}
-        p={3}
-        rounded={6}
-        alignItems="center"
-        shadow="md"
-        width="100%"
-        mt={3}
-      >
-        <Flex direction="row" width="100%">
-          <Box alignItems="center" width="25%">
-            {" "}
-            <Text fontSize="md">{data.student_name}</Text>
-          </Box>
-
-          <Spacer />
-
-          <Flex alignItems="center">
-            {" "}
-            <Text fontSize="md">{data.student_email}</Text>
-          </Flex>
-
-          <Spacer />
-
-          <Router>
-            <Flex alignItems="center">
-              <Link to={data.student_cv}>
-                <Button colorScheme="teal" size="sm" ml={20}>
-                  CV
-                </Button>
-              </Link>
-            </Flex>
-          </Router>
-        </Flex>
-      </Box>
-    </Flex>
+    <Tr>
+      <Td>{data.student_name}</Td>
+      <Td>{data.student_id}</Td>
+      <Td>{data.department}</Td>
+      <Td>{data.student_email}</Td>
+      <Td>
+        <Router>
+          <Link to={data.student_cv}>
+            <Button colorScheme="teal" size="sm">
+              CV
+            </Button>
+          </Link>
+        </Router>
+      </Td>
+    </Tr>
+  );
+}
+function StudentRowInQ({ data }) {
+  return (
+    <Tr>
+      <Td>{data.student_name}</Td>
+      <Td>{data.student_id}</Td>
+      <Td>{data.department}</Td>
+      <Td>{data.student_email}</Td>
+      <Td>
+        <Router>
+          <Link to={data.student_cv}>
+            <Button colorScheme="teal" size="sm">
+              CV
+            </Button>
+          </Link>
+        </Router>
+      </Td>
+      <Td>
+        <Button colorScheme="red" size="sm">
+          Cancel
+        </Button>
+      </Td>
+    </Tr>
   );
 }
 
