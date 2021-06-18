@@ -19,9 +19,7 @@ const Sessions = () => {
 				background={cardBackground}
 				flexDirection='column'
 				alignItems='center'
-				shadow='md'
-				ml={3}
-				mr={3}>
+				shadow='md'>
 				<AssignedSessions />
 			</Flex>
 		</Flex>

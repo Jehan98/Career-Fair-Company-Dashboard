@@ -12,9 +12,7 @@ const Panel = () => {
     return (
         <Flex 
         alignItems='center' 
-        justifyItems='center' 
-        mr={3} 
-        ml={3} 
+        justifyItems='center'
         p={3}
         background={cardBackground}
         rounded={7}

@@ -40,7 +40,6 @@ const Controls = () => {
 		ml={9}
 		overflow='auto'
 		rounded={7}
-		mr={6}
 		p={3}
 		>
 			<ControlCurrentCandidate data={data[0]} cardBackground={cardBackground} />

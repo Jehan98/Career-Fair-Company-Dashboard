@@ -13,19 +13,18 @@ const dashboard = () => {
 		<Flex
 			height='100vh'
 			flexDirection='column'
-			padding={5}
 			backgroundImage='https://bit.ly/3yXTlvM'>
 			<CompanyHeader />
-			<Flex flexDirection='row' mt={5}>
-				<Flex flexDirection='column' width="25%" >
+			<Flex flexDirection='row' mt={5} >
+				<Flex flexDirection='column' width="25%" ml={3} mr={3}>
 					<Panel />
 					<CompanyDetails />
 					<CompanySessions />
 				</Flex>
-				<Flex flexDirection='column' width="45%" >
+				<Flex flexDirection='column' width="45%" mr={3}>
 					<Interviews />
 				</Flex>
-				<Flex flexDirection='column' width="30%" >
+				<Flex flexDirection='column' width="30%" mr={3}>
 					<Controls/>
 				</Flex>
 			</Flex>

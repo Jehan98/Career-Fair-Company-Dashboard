@@ -10,11 +10,11 @@ import { LockIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 const CompanyHeader = () => {
 	const { colorMode, toggleColorMode } = useColorMode();
 	return (
-		<Flex width='100%' alignItems='center' justifyContent='space-between'>
+		<Flex width='100%' p={4} alignItems='center' justifyContent='space-between'>
 			<Heading size='md' color='white'>
 				EE Career Fair 2021 | Company Dashboard
 			</Heading>
-			<Flex>
+			<Flex >
 				<Box>
 					<IconButton
 						onClick={() => console.log("Logout Button Clicked")}

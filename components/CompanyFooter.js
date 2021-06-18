@@ -1,14 +1,8 @@
 import {
-	Flex,
 	Text,
-	TextProps,
 	useColorMode,
 	Box,
-	Stack,
-	IconButton,
-	Image,
-	Heading,
-	ButtonGroup
+	Stack
 } from "@chakra-ui/react";
 
 // import { Copyright } from './Copyright'

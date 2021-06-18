@@ -13,8 +13,9 @@ const CompanyDetails = () => {
 		email: "wso2@gmail.com",
 	};
 	return (
-		<Flex width='95%'  
-		m={3}
+		<Flex
+		mt={3}
+		mb={3}
 		flexDirection='row' 
 		alignItems='center'
 		background={cardBackground}
